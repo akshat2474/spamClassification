@@ -72,18 +72,6 @@ print("Prediction (0=ham, 1=spam):", prediction[0])
 
 ---
 
-## 🛠 Future Enhancements
-
-- Switch to `TfidfVectorizer` for improved weighting
-- Clean messages further with:
-  - Lemmatization / Stemming
-  - Lowercasing
-  - Punctuation and special character removal
-- Add a web interface using Flask or Streamlit
-- Save model using `joblib` or `pickle`
-
----
-
 ## 👤 Author
 
 **Akshat Singh**  
