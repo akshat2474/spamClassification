@@ -37,9 +37,6 @@ A collection of 5,574 SMS messages in English, labeled as either **ham** (legiti
    ```bash
    pip install -r requirements.txt
    ```
-
-3. Make sure the dataset file `spam.csv` is in the project directory.
-
 ---
 
 ## 📈 How It Works
