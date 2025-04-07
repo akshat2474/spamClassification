@@ -1,0 +1,21 @@
+==> 2025-04-07 16:35:21 <==
+# cmd: /opt/anaconda3/bin/conda create -p venv python==3.12
+# conda version: 24.11.0
++defaults/noarch::tzdata-2025a-h04d1e81_0
++defaults/osx-arm64::bzip2-1.0.8-h80987f9_6
++defaults/osx-arm64::ca-certificates-2025.2.25-hca03da5_0
++defaults/osx-arm64::expat-2.6.4-h313beb8_0
++defaults/osx-arm64::libcxx-14.0.6-h848a8c0_0
++defaults/osx-arm64::libffi-3.4.4-hca03da5_1
++defaults/osx-arm64::ncurses-6.4-h313beb8_0
++defaults/osx-arm64::openssl-3.0.16-h02f6b3c_0
++defaults/osx-arm64::pip-25.0-py312hca03da5_0
++defaults/osx-arm64::python-3.12.0-h99e199e_0
++defaults/osx-arm64::readline-8.2-h1a28f6b_0
++defaults/osx-arm64::setuptools-75.8.0-py312hca03da5_0
++defaults/osx-arm64::sqlite-3.45.3-h80987f9_0
++defaults/osx-arm64::tk-8.6.14-h6ba3021_0
++defaults/osx-arm64::wheel-0.45.1-py312hca03da5_0
++defaults/osx-arm64::xz-5.6.4-h80987f9_1
++defaults/osx-arm64::zlib-1.2.13-h18a0788_1
+# update specs: ['python==3.12']

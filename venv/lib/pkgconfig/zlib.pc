@@ -1,0 +1,13 @@
+prefix=/Users/akshat/Desktop/Stuff/spam_classification/venv
+exec_prefix=/Users/akshat/Desktop/Stuff/spam_classification/venv
+libdir=/Users/akshat/Desktop/Stuff/spam_classification/venv/lib
+sharedlibdir=/Users/akshat/Desktop/Stuff/spam_classification/venv/lib
+includedir=/Users/akshat/Desktop/Stuff/spam_classification/venv/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.13
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}

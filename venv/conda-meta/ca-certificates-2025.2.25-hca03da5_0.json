@@ -1,0 +1,46 @@
+{
+  "build": "hca03da5_0",
+  "build_number": 0,
+  "channel": "https://repo.anaconda.com/pkgs/main/osx-arm64",
+  "constrains": [],
+  "depends": [],
+  "extracted_package_dir": "/opt/anaconda3/pkgs/ca-certificates-2025.2.25-hca03da5_0",
+  "files": [
+    "ssl/cacert.pem",
+    "ssl/cert.pem"
+  ],
+  "fn": "ca-certificates-2025.2.25-hca03da5_0.conda",
+  "license": "MPL-2.0",
+  "link": {
+    "source": "/opt/anaconda3/pkgs/ca-certificates-2025.2.25-hca03da5_0",
+    "type": 1
+  },
+  "md5": "cd91b3e0b0f07e4cd5226eeab328c9fc",
+  "name": "ca-certificates",
+  "package_tarball_full_path": "/opt/anaconda3/pkgs/ca-certificates-2025.2.25-hca03da5_0.conda",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "ssl/cacert.pem",
+        "path_type": "hardlink",
+        "sha256": "50a6277ec69113f00c5fd45f09e8b97a4b3e32daa35d3a95ab30137a55386cef",
+        "sha256_in_prefix": "50a6277ec69113f00c5fd45f09e8b97a4b3e32daa35d3a95ab30137a55386cef",
+        "size_in_bytes": 233263
+      },
+      {
+        "_path": "ssl/cert.pem",
+        "path_type": "softlink",
+        "sha256": "50a6277ec69113f00c5fd45f09e8b97a4b3e32daa35d3a95ab30137a55386cef",
+        "size_in_bytes": 233263
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "None",
+  "sha256": "985b4c072779147ee2f8cc5fe4330e1745fdc3f83d19aea7ef16edaf60b0a616",
+  "size": 133749,
+  "subdir": "osx-arm64",
+  "timestamp": 1740582468000,
+  "url": "https://repo.anaconda.com/pkgs/main/osx-arm64/ca-certificates-2025.2.25-hca03da5_0.conda",
+  "version": "2025.2.25"
+}
