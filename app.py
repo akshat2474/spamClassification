@@ -6,7 +6,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 import matplotlib.pyplot as plt
 
-# Load and preprocess the data
 @st.cache_data
 def load_data():
     data = pd.read_csv('spam.csv', encoding='latin-1')
@@ -15,7 +14,6 @@ def load_data():
     data['label'] = data['label'].map({'spam': 1, 'ham': 0})
     return data
 
-# Train the model
 @st.cache_resource
 def train_model(data):
     X_train, X_test, y_train, y_test = train_test_split(data['message'], data['label'], test_size=0.3, random_state=42)
@@ -38,7 +36,6 @@ def train_model(data):
     
     return metrics
 
-# Visualization of metrics
 def plot_metrics():
     metrics_labels = ['Accuracy', 'Precision (0)', 'Recall (0)', 'F1-Score (0)', 'Precision (1)', 'Recall (1)', 'F1-Score (1)']
     values = [
@@ -60,7 +57,6 @@ def plot_metrics():
     
     st.pyplot(fig)
 
-# Set custom styles using Markdown and CSS
 def set_custom_styles():
     st.markdown(
         """
@@ -100,7 +96,6 @@ def set_custom_styles():
         unsafe_allow_html=True,
     )
 
-# Streamlit App Layout
 set_custom_styles()
 st.markdown('<h1 class="title">Spam Email Classification App</h1>', unsafe_allow_html=True)
 st.markdown('<p class="subtitle">Classify emails as Spam or Ham using a Naive Bayes model</p>', unsafe_allow_html=True)
@@ -108,7 +103,6 @@ st.markdown('<p class="subtitle">Classify emails as Spam or Ham using a Naive Ba
 data = load_data()
 metrics = train_model(data)
 
-# Sidebar options
 menu = ["Test Email", "Metrics", "Dataset Overview"]
 choice = st.sidebar.selectbox("Menu", menu)
 
@@ -131,18 +125,15 @@ if choice == "Test Email" or choice == "Home":
             
 elif choice == "Metrics":
     st.subheader("Model Performance Metrics")
-    
-    # Display Accuracy and Classification Report
+
     st.write(f"**Accuracy:** {metrics['accuracy']:.2f}")
     
     st.text("Classification Report:")
     st.text(metrics["classification_report"])
     
-    # Display Confusion Matrix
     st.text("Confusion Matrix:")
     st.write(metrics["confusion_matrix"])
     
-    # Plot Metrics Visualization
     plot_metrics()
 
 elif choice == "Dataset Overview":
