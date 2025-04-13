@@ -60,51 +60,94 @@ def plot_metrics():
     
     st.pyplot(fig)
 
+# Set custom styles using Markdown and CSS
+def set_custom_styles():
+    st.markdown(
+        """
+        <style>
+        body {
+            background-color: #f5f5f5;
+            color: #333333;
+            font-family: Arial, sans-serif;
+        }
+        .stButton > button {
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 8px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+        .stButton > button:hover {
+            background-color: #45a049;
+        }
+        .title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: bold;
+            color: #4E79A7;
+        }
+        .subtitle {
+            text-align: center;
+            font-size: 20px;
+            color: #555555;
+            margin-bottom: 20px;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+
 # Streamlit App Layout
-st.title("Spam Email Classification App")
-st.write("This app classifies emails as either **Spam** or **Ham** using a Naive Bayes model.")
+set_custom_styles()
+st.markdown('<h1 class="title">Spam Email Classification App</h1>', unsafe_allow_html=True)
+st.markdown('<p class="subtitle">Classify emails as Spam or Ham using a Naive Bayes model</p>', unsafe_allow_html=True)
 
 data = load_data()
 metrics = train_model(data)
 
 # Sidebar options
-menu = ["Home", "Test Email", "Metrics"]
-choice = st.sidebar.selectbox("Menu", menu)
+menu = ["Test Email", "Metrics"]
+choice = st.sidebar.radio("Menu", menu)
 
-if choice == "Home":
-    st.subheader("Dataset Overview")
-    st.write(data.head())
-    
-elif choice == "Test Email":
+if choice == "Test Email":
     st.subheader("Test Your Email")
     
-    user_input = st.text_area("Enter the email content below:")
+    # Two-column layout for better spacing
+    col1, col2 = st.columns([3, 2])
     
-    if st.button("Classify"):
-        vectorizer = metrics["vectorizer"]
-        model = metrics["model"]
+    with col1:
+        user_input = st.text_area("Enter the email content below:", height=200)
         
-        user_input_transformed = vectorizer.transform([user_input])
-        prediction = model.predict(user_input_transformed)[0]
-        
-        if prediction == 1:
-            st.error("This email is classified as: SPAM")
-        else:
-            st.success("This email is classified as: HAM")
+        if st.button("Classify"):
+            vectorizer = metrics["vectorizer"]
+            model = metrics["model"]
             
+            user_input_transformed = vectorizer.transform([user_input])
+            prediction = model.predict(user_input_transformed)[0]
+            
+            if prediction == 1:
+                st.error("This email is classified as: SPAM")
+            else:
+                st.success("This email is classified as: HAM")
+    
 elif choice == "Metrics":
     st.subheader("Model Performance Metrics")
     
-    # Display Accuracy and Classification Report
-    st.write(f"**Accuracy:** {metrics['accuracy']:.2f}")
+    # Display Accuracy and Classification Report in two columns
+    col1, col2 = st.columns([2, 3])
     
-    st.text("Classification Report:")
-    st.text(metrics["classification_report"])
-    
-    # Display Confusion Matrix
-    st.text("Confusion Matrix:")
-    st.write(metrics["confusion_matrix"])
-    
-    # Plot Metrics Visualization
-    plot_metrics()
-
+    with col1:
+        st.write(f"**Accuracy:** {metrics['accuracy']:.2f}")
+        
+        st.text("Classification Report:")
+        st.text(metrics["classification_report"])
+        
+    with col2:
+        # Display Confusion Matrix
+        st.text("Confusion Matrix:")
+        st.write(metrics["confusion_matrix"])
+        
+        # Plot Metrics Visualization
+        plot_metrics()
