@@ -9,6 +9,13 @@ A simple and effective spam detection model built using **Multinomial Naive Baye
 
 ---
 
+## 🔗 Try It Online
+
+**Check out the interactive Streamlit app here:**  
+[https://akshat2474-spamclassification-app-r0jdr9.streamlit.app/](https://akshat2474-spamclassification-app-r0jdr9.streamlit.app/)
+
+---
+
 ## 📂 Dataset
 
 > [SMS Spam Collection Dataset](https://www.kaggle.com/datasets/uciml/sms-spam-collection-dataset?resource=download)  
@@ -18,11 +25,12 @@ A collection of 5,574 SMS messages in English, labeled as either **ham** (legiti
 
 ## 🔧 Tech Stack
 
-- 🐍 Python 3.8+
-- 📊 Pandas
-- 🧠 Scikit-learn
-- ✉️ CountVectorizer (Bag of Words model)
-- 📈 Naive Bayes Classifier
+-  Python 3.8+
+-  Pandas
+-  Scikit-learn
+-  CountVectorizer (Bag of Words model)
+-  Naive Bayes Classifier
+-  Streamlit (for web interface)
 
 ---
 
@@ -37,6 +45,12 @@ A collection of 5,574 SMS messages in English, labeled as either **ham** (legiti
    ```bash
    pip install -r requirements.txt
    ```
+
+3. Run the Streamlit app:
+   ```bash
+   streamlit run app.py
+   ```
+
 ---
 
 ## 📈 How It Works
@@ -49,11 +63,11 @@ A collection of 5,574 SMS messages in English, labeled as either **ham** (legiti
   - Accuracy
   - Confusion Matrix
   - Classification Report
-- Predict custom messages for spam detection
+- **Classify custom messages live via Streamlit**
 
 ---
 
-## 🧪 Sample Prediction
+## 🧪 Sample Prediction (Code-based)
 
 ```python
 new_email = ["Win a $1000 gift card now! Click here."]
@@ -69,13 +83,24 @@ print("Prediction (0=ham, 1=spam):", prediction[0])
 - **Accuracy:** 98.32% 
 - **Confusion Matrix**: Breakdown of True/False Positives & Negatives
 - **Precision/Recall**: Useful for spam-heavy datasets
+- Visualized via bar charts in the Streamlit interface
+
+---
+
+## 🖥️ Streamlit App Features
+
+-  Beautiful UI with custom CSS styling
+-  Test your own email/SMS messages in real time
+-  Visualize accuracy, precision, recall, and F1-score
+-  View the first few rows of the dataset
+-  Efficient caching for faster load times
 
 ---
 
 ## 👤 Author
 
 **Akshat Singh**  
-[LinkedIn](https://www.linkedin.com/in/akshat-singh-48a03b312/) • [GitHub](https://github.com/akshat2474) 
+[LinkedIn](https://www.linkedin.com/in/akshat-singh-48a03b312/) • [GitHub](https://github.com/akshat2474)
 
 ---
 
@@ -83,4 +108,3 @@ print("Prediction (0=ham, 1=spam):", prediction[0])
 
 This project is licensed under the [MIT License](LICENSE).
 
----
