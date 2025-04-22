@@ -100,7 +100,7 @@ print("Prediction (0=ham, 1=spam):", prediction[0])
 ## 👤 Author
 
 **Akshat Singh**  
-[LinkedIn](https://www.linkedin.com/in/akshat-singh-48a03b312/) • [GitHub](https://github.com/akshat2474)
+• [GitHub](https://github.com/akshat2474)
 
 ---
 
