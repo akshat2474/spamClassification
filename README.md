@@ -94,14 +94,7 @@ print("Prediction (0=ham, 1=spam):", prediction[0])
 -  Visualize accuracy, precision, recall, and F1-score
 -  View the first few rows of the dataset
 -  Efficient caching for faster load times
-
----
-
-## 👤 Author
-
-**Akshat Singh**  
-• [GitHub](https://github.com/akshat2474)
-
+  
 ---
 
 ## 📄 License
